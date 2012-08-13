@@ -14,7 +14,7 @@ window.GAExperiments = {
 		}
 		var sampleKeys = Object.keys(options.samples);
 		var key = Math.floor(id * (sampleKeys.length)) + 1;
-		$(options.samples[sampleKeys[key]]);
+		options.samples[sampleKeys[key]]();
 		window._gaq.push(["_setCustomVar", options.slot, options.name, sampleKeys[key], 1]);
 	}
 };
