@@ -6,7 +6,7 @@ JavaScript A/B testing with custom variables in Google Analytics
 ```javascript
 GAExperiments.add({
   name: "Left column font size",
-  slot: 1,
+  slot: 1, //From 1 to 5
 	samples: {,
 		'.9em': function(){
 			$('#sidebar-left .content').css({
