@@ -4,13 +4,13 @@ window.GAExperiments = {
 	experiments: [],
 	
 	add: function (options) {
-		if (typeof $ === 'undefined' || !window.localStorage || !options.samples) {
+		if (typeof $ === 'undefined' || !window.localStorage || !options.samples || !options.slot) {
 			return;
 		}
-		var id = localStorage.getItem('ga-experiments-id');
+		var id = localStorage.getItem('ga-experiment-' + options.slot);
 		if (!id) {
 			id = Math.random();
-			localStorage.setItem('ga-experiments-id', id);
+			localStorage.setItem('ga-experiment-' + options.slot, id);
 		}
 		var sampleKeys = Object.keys(options.samples);
 		var key = Math.floor(id * (sampleKeys.length)) + 1;
