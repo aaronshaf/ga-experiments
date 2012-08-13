@@ -17,6 +17,7 @@ window.GAExperiments = {
 		if(typeof options.samples[sampleKeys[key]] === 'function') {
 			options.samples[sampleKeys[key]]();
 		} else {
+			console.log(typeof options.samples[sampleKeys[key]] === 'function');
 			console.log(key);
 			console.log(sampleKeys);
 			console.log(options.samples);
