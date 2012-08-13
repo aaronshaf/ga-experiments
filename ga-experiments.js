@@ -10,7 +10,7 @@ window.GAExperiments = {
 		var id = localStorage.getItem('ga-experiments-id');
 		if (!id) {
 			id = Math.random();
-			localStorage.setItem('ga-exeriments-id', id);
+			localStorage.setItem('ga-experiments-id', id);
 		}
 		var sampleKeys = Object.keys(options.samples);
 		var key = Math.floor(id * (sampleKeys.length)) + 1;
