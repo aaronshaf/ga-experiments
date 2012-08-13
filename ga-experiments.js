@@ -1,8 +1,9 @@
+window._gaq = window._gaq || [];
+
 GAExperiments = {
-	window._gaq = window._gaq || [];
-	this.experiments = [];
+	experiments: [],
 	
-	this.add = function(options) {
+	add: function(options) {
 		if(typeof $ === 'undefined'
 				|| !window.localStorage
 				|| !options.samples) return;
@@ -14,6 +15,6 @@ GAExperiments = {
 		var sampleKeys = Object.keys(options.samples);
 		var key = Math.floor(id * (sampleKeys.length)) + 1;
 		$(options.samples[sampleKeys[key]]);
-		_gaq.push(["_setCustomVar", options.slot, options.name, sampleKeys[key], 1]);
-	};
+		window._gaq.push(["_setCustomVar", options.slot, options.name, sampleKeys[key], 1]);
+	}
 };
