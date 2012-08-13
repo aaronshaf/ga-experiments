@@ -13,15 +13,8 @@ window.GAExperiments = {
 			localStorage.setItem('ga-experiment-' + options.slot, id);
 		}
 		var sampleKeys = Object.keys(options.samples);
-		var key = Math.floor(id * (sampleKeys.length)) + 1;
-		if(typeof options.samples[sampleKeys[key]] === 'function') {
-			options.samples[sampleKeys[key]]();
-		} else {
-			console.log(typeof options.samples[sampleKeys[key]]);
-			console.log(key);
-			console.log(sampleKeys);
-			console.log(options.samples);
-		}
+		var key = Math.floor(id * (sampleKeys.length));
+		options.samples[sampleKeys[key]]();
 		
 		window._gaq.push(["_setCustomVar", options.slot, options.name, sampleKeys[key], 1]);
 	}
