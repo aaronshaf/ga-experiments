@@ -1,8 +1,6 @@
 window._gaq = window._gaq || [];
 
 window.GAExperiments = {
-	experiments: [],
-	
 	add: function (options) {
 		if (typeof $ === 'undefined' || !window.localStorage || !options.samples || !options.slot) {
 			return;
