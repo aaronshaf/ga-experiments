@@ -1,16 +1,16 @@
 window._gaq = window._gaq || [];
 
-GAExperiments = {
+window.GAExperiments = {
 	experiments: [],
 	
-	add: function(options) {
-		if(typeof $ === 'undefined'
-				|| !window.localStorage
-				|| !options.samples) return;
+	add: function (options) {
+		if (typeof $ === 'undefined' || !window.localStorage || !options.samples) {
+			return;
+		}
 		var id = localStorage.getItem('ga-experiments-id');
-		if(!id) {
+		if (!id) {
 			id = Math.random();
-			localStorage.setItem('ga-exeriments-id',id);
+			localStorage.setItem('ga-exeriments-id', id);
 		}
 		var sampleKeys = Object.keys(options.samples);
 		var key = Math.floor(id * (sampleKeys.length)) + 1;
